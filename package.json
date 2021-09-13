@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/andrewtdinh/cucumberjs/issues"
   },
-  "homepage": "https://github.com/andrewtdinh/cucumberjs#readme"
+  "homepage": "https://github.com/andrewtdinh/cucumberjs#readme",
+  "devDependencies": {
+    "@cucumber/cucumber": "^7.3.1"
+  }
 }
