@@ -1,19 +1,18 @@
-const Person = require('../../src/shouty.js');
+const Person = require('../../src/shouty');
 const { Given, When, Then } = require("@cucumber/cucumber");
+const { assertThat, is } = require('hamjest');
 
 Given('Lucy is located {int} meters from Sean', function (distance) {
-  const lucy = new Person;
-  const sean = new Person;
-  lucy.moveTo(distance);
-  return 'pending';
+  this.lucy = new Person;
+  this.sean = new Person;
+  this.lucy.moveTo(distance);
 });
 
-When('Sean shouts {string}', function (string) {
-  // Write code here that turns the phrase above into concrete actions
-  return 'pending';
+When('Sean shouts {string}', function (message) {
+  this.sean.shout(message);
+  this.message = message;
 });
 
 Then('Lucy hears Sean\'s message', function () {
-  // Write code here that turns the phrase above into concrete actions
-  return 'pending';
+  assertThat(this.lucy.messagesHeard(), is([this.message]))
 });
