@@ -22,4 +22,4 @@ Feature: Shout
 
     Scenario: Listener is within range
 
-    Scenario: Listener is out of range
+    Scenario: Listener is out of range 

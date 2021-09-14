@@ -3,22 +3,20 @@ const { assertThat, is } = require("hamjest");
 
 const { Person, Network } = require("../../src/shouty");
 
+Given("a person named Lucy", function (person) {
+  this.lucy = new Person(this.network);
+});
+
+Given("a person named Sean", function (person) {
+  this.sean = new Person(this.network);
+});
+
 Given("Lucy is {int} metres from Sean", function (distance) {
   this.network = new Network();
   this.lucy = new Person(this.network);
   this.sean = new Person(this.network);
 
   this.lucy.moveTo(distance);
-});
-
-Given('a person named {person}', function (person) {
-  // Write code here that turns the phrase above into concrete actions
-  return 'pending';
-});
-
-Given('a person named {person}', function (person) {
-  // Write code here that turns the phrase above into concrete actions
-  return 'pending';
 });
 
 When("Sean shouts {string}", function (message) {
