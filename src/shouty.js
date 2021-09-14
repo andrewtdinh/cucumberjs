@@ -1,7 +1,8 @@
 class Person {
-  constructor(network) {
+  constructor(network, location) {
     this.messages = [];
     this.network = network;
+    this.location = location;
 
     this.network.subscribe(this);
   }
