@@ -1,8 +1,12 @@
-const { Given, When, Then } = require("@cucumber/cucumber");
+const { Given, When, Then, Before } = require("@cucumber/cucumber");
 const { assertThat, is } = require("hamjest");
 
 const { Person, Network } = require("../../src/shouty");
 
+
+Before(function() {
+  this.network = new Network();
+})
 Given("a person named Lucy", function (person) {
   this.lucy = new Person(this.network);
 });
