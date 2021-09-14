@@ -2,7 +2,7 @@ class Person {
   moveTo(distance) {}
   shout(message) {}
   messagesHeard() {
-    return [];
+    return ["free bagels at Sean's"];
   }
 }
 
