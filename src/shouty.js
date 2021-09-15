@@ -20,16 +20,21 @@ class Person {
   }
 }
 class Network {
-  constructor() {
+  constructor(range) {
     this.listeners = [];
+    this.range = range;
   }
 
   subscribe(person) {
     this.listeners.push(person);
   }
 
-  broadcast(message) {
-    this.listeners.forEach(listener => { listener.hear(message)})
+  broadcast(message, shouter_location) {
+    this.listeners.forEach(listener => {
+      if (Math.abs(listener.location - shouter_location) <= this.range) {
+        listener.hear(message)
+      }
+    })
   }
 }
 
