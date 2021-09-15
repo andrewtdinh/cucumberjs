@@ -8,7 +8,7 @@ class Person {
   }
 
   shout(message) {
-    this.network.broadcast(message);
+    this.network.broadcast(message, this.location);
   }
 
   hear(message) {

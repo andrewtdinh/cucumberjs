@@ -11,9 +11,9 @@ Feature: Shout
 
   Rule: Shouts can be heard by other users
 
-    Scenario: Listener within range
-      When Sean shouts "free bagels at Sean's"
-      Then Lucy should hear Sean's message
+    Scenario: Listener within range by default
+      When Sean shouts
+      Then Lucy should hear a shout
 
   Rule: Shouts should only be heard if listener is within range
 
