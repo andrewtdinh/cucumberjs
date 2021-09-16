@@ -49,5 +49,12 @@ Feature: Shout
     Scenario: Message is too long
       Given a person named Sean
       And a person named Lucy
-      When Sean shouts "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890 123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"
+      When Sean shouts the following message
+        """
+        This is a crazy long and meaningless paragraph used to 
+        demonstrate the use of doc string.  I am going to keep
+        typing until the paragraph is five lines long to make 
+        sure we have exceeded the 180 characters count to proof
+        that doc strings can be used in such casesl
+        """
       Then Lucy should not hear a shout

@@ -34,6 +34,12 @@ When("Sean shouts", function () {
   this.people['Sean'].shout("Hello, world")
 });
 
+When("Sean shouts the following message", function (message) {
+  // doc string is automatically passed to the function as message
+  this.people['Sean'].shout(message)
+  this.messageFromSean = message
+});
+
 Then('Lucy should hear a shout', function () {
   assertThat(this.people['Lucy'].messagesHeard().length, is(1))
 })
