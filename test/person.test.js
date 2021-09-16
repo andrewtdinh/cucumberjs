@@ -33,4 +33,18 @@ describe("Person", () => {
     lucy.hear(message);
     assert.deepStrictEqual(lucy.messagesHeard(), [message]);
   });
+
+  it("does not broadcast a message over 180 characters even if listener is in range", () => {
+    const shouterLocation = 0;
+    const listenerLocation = 90;
+    const lucy = new Person(networkStub, listenerLocation);
+    const lucyStub = sinon.spy(lucy);
+
+    const longMessage = 'x'.repeat(181);
+
+    network.subscribe(lucy)
+    network.broadcast(longMessage, shouterLocation);
+
+    assert(lucyStub.hear.notCalled);
+  });
 });
