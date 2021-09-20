@@ -4,7 +4,7 @@
   "description": "For learning cucumberjs",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js"
+    "test": "cucumber-js -f @cucumber/pretty-formatter"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/andrewtdinh/cucumberjs#readme",
   "devDependencies": {
     "@cucumber/cucumber": "^7.3.1",
+    "@cucumber/pretty-formatter": "latest",
     "hamjest": "^3.7.2",
     "sinon": "^11.1.2"
   }
