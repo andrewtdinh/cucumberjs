@@ -25,6 +25,7 @@ Feature: Shout
       When Sean shouts
       Then Lucy should hear a shout
 
+    @focus
     Scenario: Listener is out of range
       Given the range is 100
       And people are located at
